@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                     sh 'ls'
-                    sh 'cd hello-world-war'
+                    sh "cd hello-world-war"
                     sh 'pwd'
                     sh 'mvn clean package'
             }
