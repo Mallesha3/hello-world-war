@@ -11,6 +11,7 @@ pipeline {
             steps {
                     sh 'ls'
                     sh 'cd hello-world-war'
+                    sh 'ls'
                     sh 'mvn clean package'
             }
         }
