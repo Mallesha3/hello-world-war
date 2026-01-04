@@ -10,7 +10,9 @@ pipeline {
         stage('Build') {
             steps {
                     sh 'ls'
-                    sh "cd hello-world-war"
+                    sh '''
+                    cd /var/lib/jenkins/workspace/Helloworld_pipeline/hello-world-war
+                    '''
                     sh 'pwd'
                     sh 'mvn clean package'
             }
