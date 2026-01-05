@@ -22,9 +22,11 @@ pipeline {
         stage('Deploy') {
             steps {
                     sh '''
-                    pwd
-                    ls
-                    scp -r target/*.war root@3.110.204.120:/opt/tomcat/webapps/
+                    ls -l target/*.war
+
+                    scp target/*.war root@3.110.204.120:/opt/tomcat/webapps/
+
+                    ssh root@3.110.204.120 "systemctl restart tomcat"
                 '''
             }
         }
