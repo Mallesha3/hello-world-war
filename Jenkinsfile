@@ -26,9 +26,19 @@ pipeline {
                 dir('hello-world-war') {
                     sh '''
                     set -e
-                    ls -l target/*.war
-                    scp target/*.war root@3.110.204.120:/opt/tomcat/webapps/
-                    ssh root@3.110.204.120 "systemctl restart tomcat"
+
+            echo "WAR files found:"
+            ls -l target/*.war
+
+            echo "Deploying WAR"
+            scp target/*.war root@3.110.204.120:/opt/tomcat/webapps/
+
+            echo "Restarting Tomcat"
+            ssh root@3.110.204.120 "
+            /opt/tomcat/bin/shutdown.sh || true
+            sleep 5
+            /opt/tomcat/bin/startup.sh
+            "
                     '''
                 }
             }
