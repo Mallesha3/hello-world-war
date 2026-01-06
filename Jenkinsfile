@@ -12,7 +12,7 @@ agent any
                 sh 'git clone https://github.com/Mallesha3/hello-world-war'
             }
         }
-    }
+    
 stage('Build') {
             steps {
                 dir('hello-world-war') {
