@@ -1,5 +1,6 @@
 pipeline {
-    agent { label 'Java_Env' }
+// agent { label 'Java_Env' }
+    agent none
 
     stages {
         stage('Checkout') {
