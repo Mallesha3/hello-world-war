@@ -4,7 +4,7 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            agent { label 'Java_Env' }
+            //agent { label 'Java_Env' }
             steps {
                 
                 sh 'rm -rf *'
