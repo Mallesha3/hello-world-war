@@ -16,6 +16,7 @@ agent any
             steps {
 
               sh 'echo welcome'
+             sh 'echo $CMD $RUN_TESTS $CMD1'
                 //sh 'rm -rf *'
                 //sh 'git clone https://github.com/Mallesha3/hello-world-war'
             }
