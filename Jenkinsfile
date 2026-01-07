@@ -13,6 +13,9 @@ agent any
   //  agent none
 
     stages {
+     //parallel {
+     // stage('Checkout')
+     //}
         stage('Checkout') {
             //agent { label 'Java_Env' }
             steps {
