@@ -2,9 +2,9 @@ pipeline {
 agent any
 
  parameters {
-        string(name: 'CMD', defaultValue: '', description: 'command used to run or to build application')
-        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
-        choice(name: 'CMD1', choices: ['clean', 'validate'], description: 'test package deploy')
+        string(name: 'CMD', defaultValue: 'cd', description: 'command used to run or to build application')
+        booleanParam(name: 'RUN_TESTS', defaultValue: false, description: 'Run tests?')
+        choice(name: 'CMD1', choices: ['clean', 'validate', 'compile'], description: 'test package deploy')
     }
  
  //agent { label 'Java_Env' }
